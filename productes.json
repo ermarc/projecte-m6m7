@@ -1,0 +1,90 @@
+{
+    "productes":
+
+    [
+    {
+        "id": 0,
+        "name": "NVIDIA GeForce RTX 4090 (SUPRIM X) 24GB",
+        "price": 1899.99,
+        "img": "https://asset.msi.com/resize/image/global/product/product_16655454640522cb62a2d8fd26c236e55f72b3603d.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Tarjetas gráficas"
+    },
+    {
+        "id": 1,
+        "name": "Ryzen 7 5800X3D",
+        "price": 379.99,
+        "img": "https://www.amd.com/system/files/2022-04/1268900-ryzen-5000-series-pib-1260x709_0.png",
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Procesadores"
+    },
+    {
+        "id": 2,
+        "name": "Crucial P3 Plus 2TB (NVMe 4.0)",
+        "price": 159.99,
+        "img": "http://d2r9epyceweg5n.cloudfront.net/stores/002/381/523/products/thumb-111-63ca90b5335d90ac2d16633104341874-640-0.png",
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Unidades de almacenamiento"
+    },
+    {
+        "id": 3,
+        "name": "ASUS Z490-P STRIX",
+        "price": 279.99,
+        "img": "https://rog.asus.com/websites/global/products/j2nsws2yijtxo0bt/img/z490/kv/hero.png",
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Placas base"
+    },
+    {
+        "id": 4,
+        "name": "Pasta térmica ARCTIC MX-4",
+        "price": 8.99,
+        "img": "https://www.arctic.de/media/a5/fd/66/1583499441/MX4_4g_G00.png",
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Misceláneo"
+    },
+    {
+        "id": 5,
+        "name": "Corsair Vengeance Pro 2x16GB 3600MHz",
+        "price": 158.99,
+        "img": "https://www.corsair.com/medias/sys_master/images/images/h27/h83/9096216674334/-CMW32GX4M2A2666C16-Gallery-CMW32GX4M2A2666C16-Vengeance-RGB-Pro-01.png",
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Memorias RAM"
+    },
+    {
+        "id": 6,
+        "name": "Videoconsola Xbox Series S",
+        "price": 288.99,
+        "img": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4FkjX?ver=c092",
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Videoconsolas"
+    },{
+        "id": 7,
+        "name": "Smartphone Google Pixel 6 Pro",
+        "price": 644.99,
+        "img": "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/main_card_image/https/bdt.computerhoy.com/sites/default/files/pixel_6_pro.png?itok=byahJ3xW",
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Smartphones"
+    },{
+        "id": 8,
+        "name": "Fuente de alimentación Corsair RM850",
+        "price": 139.99,
+        "img": "https://www.corsair.com/medias/sys_master/images/images/hea/h4c/9785986318366/base-rm-wht-2021-config/Gallery/RM750_WHITE_01/-base-rm-wht-2021-config-Gallery-RM750-WHITE-01.png_515Wx515H",
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Fuentes de alimentación"
+    },{
+        "id": 9,
+        "name": "AMD Radeon RX 6950XT",
+        "price": 859.99,
+        "img": "https://www.notebookcheck.org/fileadmin/Notebooks/News/_nc3/579976_amd_radeon_6800xt_option_1260x709_png.png",
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Tarjetas gráficas"
+    },{
+        "id": 10,
+        "name": "Richard Stallman's Bless",
+        "price": 109.99,
+        "img": "http://i.imgur.com/DmuTdFE.gif",
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Misceláneo"
+    }
+    ]
+}

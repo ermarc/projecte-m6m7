@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    top: 0;
+    left: 0;
+    font-family: cursive;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    padding-top: 0.5vh;
+    padding-bottom: 0.33vh;
+    background-image: linear-gradient(to left, lightgreen, green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+header img {
+    width: 70vh;
+    height: 7vh;
+}
+
+.accountButton {
+    width: 26vh;
+    height: 10vh;
+    background-color: greenyellow;
+    box-shadow: 0.51vh 0.51vh 0vh 0vh lightgreen;
+    font-size: 4vh;
+    margin: 2vh;
+}
+
+body {
+    background-image: url("https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+#welcomeTitle {
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    font-family: "Exo 2";
+    font-style: bold;
+    font-size: 5vh;
+    clear: both;
+}
+
+#listedFeaturedProducts {
+    width: 100%;
+    margin-top: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.featuredProduct {
+    box-sizing: border-box;
+    text-align: center;
+    width: 50vh;
+    border: 2vh solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, lightgreen, green);;
+    background-image: linear-gradient(to left, lightgreen, green);
+    padding: 1vh;
+    margin: 1vh;
+}
+
+.featuredProduct:hover {
+    animation: smallExpand 0.3s forwards;
+}
+
+.featuredProduct img, section img {
+    max-width: 35vh;
+    max-height: 20vh;
+    width: auto;
+    height: auto;
+}
+
+#divSelectProducts {
+    margin-top: 8vh;
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    margin-top: 10vh;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    background-color: rgb(100, 100, 100);
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    bottom: 0;
+    font-size: 5vh;
+    text-align: center;
+}
+
+#backgroundBlur {
+    position: fixed;
+    text-align: center;
+    backdrop-filter: blur(1.5vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+#messagePrompt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    font-size: 2vh;
+    font-style: italic;
+    color: white;
+    background-color: rgb(0, 121, 10);
+    box-shadow: 0.4vh 0.4vh 0vh 0vh rgb(0, 62, 5);
+    padding: 2vh;
+    max-width: 50vh;
+}
+
+#messagePrompt input {
+    width: 30vh;
+    height: 3vh;
+    border-radius: 0.8vh;
+    margin: 1vh;
+}
+
+textarea {
+    border-radius: 3vh;
+}
+
+#productPopupTitle {
+    inline-size: 8vh;
+}
+
+#buttonForm button {
+    margin: 15px;
+    width: 150px;
+    height: 65px;
+    background-color: greenyellow;
+    box-shadow: 3px 3px 0px 0px lightgreen;
+    font-size: 25px;
+}
+
+#fileAgrouppation {
+    width: 100%;
+    max-height: 20vh;
+    overflow-y: scroll;
+}
+
+.newProductImage {
+    background-Color: lightgreen;
+    border: 10px solid darkgreen;
+    border-radius: 30px;
+    height: 80px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.newProductImage img {
+    height: 100px;
+}
+
+.removeButton {
+    margin-left: 1vh;
+    background-color: red;
+    border-radius: 1vh;
+    padding: 2vh;
+    color: white;
+}
+
+@keyframes smallExpand {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(0.85);
+    }
+    80% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes smoothOpacity {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@keyframes fullExpand {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
