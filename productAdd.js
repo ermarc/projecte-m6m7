@@ -5,8 +5,7 @@ let photoInputText = document.getElementById("photoInput").getElementsByTagName(
 
 photoInput.addEventListener("dragover", function(event) {
     prevDefault(event);
-    photoInput.style.backgroundColor = "rgba(18, 255, 247, 0.444);";
-    photoInputText[0].innerHTML = "¡Rápido! ¡Suéltala! 😱";
+    photoInput.style.backgroundColor = "rgba(18, 255, 247, 0.44)";    photoInputText[0].innerHTML = "¡Rápido! ¡Suéltala! 😱";
 })
 
 photoInput.addEventListener("dragleave", function(event) {
@@ -17,7 +16,6 @@ photoInput.addEventListener("dragleave", function(event) {
 
 photoInput.addEventListener("drop", function(event) {
     prevDefault(event);
-    console.log("SSKEEREE");
     photoFiles = photoFiles.concat(Array.from(event.dataTransfer.files));
     showFiles();
 })
@@ -52,7 +50,7 @@ function processFile(file, index) {
             let str = document.createElement("div");
             str.className = "newProductImage";
             str.innerHTML = `<img src="${fileURL}"/>
-                            <span style="text-overflow: ellipsis; min-width: 300px; width: auto; overflow: hidden;">${file.name}<br></span>
+                            <span style="text-overflow: ellipsis; max-width: 20vh; width: auto; overflow: hidden;">${file.name}<br></span>
                             <span onclick="deleteFile(${index}, true)" class="removeButton">X</span>`;
             document.getElementById("fileAgrouppation").appendChild(str);
         });

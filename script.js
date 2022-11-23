@@ -14,7 +14,9 @@ function convertProductArrayToHTML() {
         productParentDiv.className = "featuredProduct";
         addChildItemsToProduct(item, productParentDiv, productArrayIndex);
         // addChildItemsToOptionSelector(item);
-        document.getElementById("listedFeaturedProducts").appendChild(productParentDiv);
+        setTimeout(function() {
+            document.getElementById("listedFeaturedProducts").appendChild(productParentDiv);
+        }, 450);
     });
 }
 
@@ -71,8 +73,8 @@ function hidePromptMessage() {
 	elemento.style.animation = "smoothOpacity 0.15s forwards";
 	elemento.style.animationDirection = "reverse";
 	elemento.style.animationDelay = "0.3s";
-    deleteNewScript();
 	setTimeout(function() {
+        deleteNewScript();
 		elemento.style.transform = "scale(0)";
 		elementoTexto.style.transform = "scale(0)";
 		elemento.style.animation = "";
@@ -81,66 +83,66 @@ function hidePromptMessage() {
 }
 
 function createRegisterForm() {
-	let str = 	`<section>
+	let str = 	`<form onsubmit="validRegistre()">
 					<h1 style="font-style: italic;">Formulario de registro</h1>
                     <h3><br>Nombre de usuario<br><input type="text" id="usernameInput"></input></h3>
                     <h3>Email<br><input type="text" id="emailInput"></input></h3>
                     <h3>Su contraseña<br><input type="password" id="passwordInput"></input></h3>
                     <h3>Repita su contraseña<br><input type="password" id="confirmPasswordInput"></input></h3>
                     <div id="buttonForm">
-                        <button onclick="validRegistre()">Continuar</button>
-                        <button onclick="hidePromptMessage()">Cancelar</button>
+                        <button>Continuar</button>
+                        <button onclick="hidePromptMessage()" type="button">Cancelar</button>
                     </div>
-                </section>`;
+                </form>`;
     showPromptMessage(str);
     createNewScript("eventListeners.js");
 }
 
 function createLoginForm() {
-    let str = 	`<section>
+    let str = 	`<form>
 					<h1 style="font-style: italic;">Iniciar sesión</h1>
                     <h3><br>Nombre de usuario<br><input type="text" id="usernameInput"></input></h3>
                     <h3>Su contraseña<br><input type="password" id="passwordInput"></input></h3>
                     <div id="buttonForm">
                         <button onclick="validRegistre()">Continuar</button>
-                        <button onclick="hidePromptMessage()">Cancelar</button>
+                        <button onclick="hidePromptMessage()" type="button">Cancelar</button>
                     </div>
-                </section>`;
+                </form>`;
     showPromptMessage(str);
     createNewScript("eventListeners.js");
 }
 
 function createProductPopUp(productArrayIndex) {
-    let str = 	`<section>
+    let str = 	`<form>
 					<h2 id="productPopupTitle" style="font-style: italic;">${productArray[productArrayIndex].name}</h2>
                     <h4>${productArray[productArrayIndex].category}</h4>
                     <img src=${productArray[productArrayIndex].img}></img>
                     <h5>${productArray[productArrayIndex].description}</h5>
 
                     <div id="buttonForm">
-                        <button onclick="hidePromptMessage()">Volver</button>
+                        <button onclick="hidePromptMessage()" type="button">Volver</button>
                     </div>
-                </section>`;
+                </form>`;
     showPromptMessage(str);
 }
 
 function summonAddProductForm() {
-    let str = 	`<section style="inline-size: 500px;">
+    let str = 	`<form width="1200vh">
                     <h1 style="font-style: italic;">Añadir producto</h1>
                     <h4><br>Nombre de producto<br><input type="text" style="margin: 4px;"></input></h3>
                     <h4>Descripción de producto<br><textarea style="width:350px; height: 55px; margin: 4px;"></textarea></h3>
                     <div id="photoInput" class="active" style="border: 5px dashed blue; border-radius: 0px; padding: 20px; margin:10px;">
                         <h4>Arrastra una foto aquí...</h4>
-                        <button>Upload files</button>
+                        <button onclick="click()" type="button">Upload files</button>
                         <input type="file" name="inputFiles[]" id="input-file" hidden multiple />
                     </div>
                     <div id="fileAgrouppation">
                     </div>
                     <div id="buttonForm">
                         <button>Continuar</button>
-                        <button onclick="hidePromptMessage()">Cancelar</button>
+                        <button onclick="hidePromptMessage()" type="button">Cancelar</button>
                     </div>
-                </section>`;
+                </form>`;
     showPromptMessage(str);
     createNewScript("productAdd.js");
 }
@@ -229,4 +231,34 @@ function validateConfirmedPassword() {
         passwordConfirm.style.backgroundColor = "rgb(255, 62, 62)";
         return 0;
     }
+}
+
+function doNotUse() {
+    let str =   `<form>
+                    <h2>¿Seguro que quieres proceder?</h1>
+                    <h5>(alerta de sonido)</h5>
+                    <div id="buttonForm">
+                        <button type="button" onclick="epilepsyParty()">end my suffering 💀</button>
+                        <button onclick="hidePromptMessage()" type="button">w8w8w8 hell nah</button>
+                    </div>
+                </form>`;
+    showPromptMessage(str);
+}
+
+function epilepsyParty() {
+    let featuredProducts = document.body.getElementsByClassName("featuredProduct");
+    document.getElementById("epilepsyAudio").play();
+    document.getElementById("epilepsyButton").remove();
+    hidePromptMessage();
+    setTimeout(function() {
+        document.getElementsByTagName("body")[0].style.backgroundSize = "0vh";
+        let everythingSelector = document.querySelectorAll('*');
+        for (let i = 0; i < everythingSelector.length; i++) {
+            everythingSelector[i].style.animation = "textColor 0.25s infinite";
+        }
+        document.getElementsByTagName("header")[0].style.animation = "multiInvert 0.08s infinite";
+        for (let i = 0; i < featuredProducts.length; i++) {
+            featuredProducts[i].style.animation = "multiInvert 0.1s infinite";
+        }
+    }, 6650);
 }
