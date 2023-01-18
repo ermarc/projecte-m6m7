@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    top: 0;
+    left: 0;
+    padding: 0;
+    font-family: "Exo+2";
+}
+
+body {
+    background-image: linear-gradient(to left, lightgreen, green);
+}
+
+#backgroundBlur {
+    position: fixed;
+    text-align: center;
+    backdrop-filter: blur(1.5vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+#messagePrompt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    font-size: 3vh;
+    font-style: italic;
+    color: white;
+    background-color: rgb(0, 121, 10);
+    box-shadow: 0.4vh 0.4vh 0vh 0vh rgb(0, 62, 5);
+    padding: 2vh;
+    max-width: 50vh;
+}
+
+#messagePrompt input {
+    width: 30vh;
+    height: 3vh;
+    border-radius: 0.8vh;
+    margin: 1vh;
+}
+
+@keyframes fullExpand {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes smoothOpacity {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}

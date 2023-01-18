@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     font-family: 4vh;
-    font-family: cursive;
+    font-family: 'Exo+2';
 }
 
 header {
@@ -53,7 +53,7 @@ body {
 
 #listedFeaturedProducts {
     width: 100%;
-    margin-top: 5vh;
+    margin-top: 3vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -96,7 +96,7 @@ body {
 }
 
 #divSelectProducts {
-    margin-top: 8vh;
+    margin-top: 3vh;
     display: flex;
     justify-content: center;
 }
@@ -165,6 +165,29 @@ textarea {
     font-size: 3vh;
 }
 
+.unresolvedField {
+    color: red;
+}
+
+.resolvedField {
+    color: green;
+}
+
+.passwordAdvisorsDiv {
+    width: 40vh;
+    height: 25vh;
+    border-radius: 2vh;
+    background-color: lightgreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    z-index: -5;
+    left: 105%;
+    top: 250%;
+}
+
 #fileAgrouppation {
     width: 100%;
     max-height: 20vh;
@@ -216,6 +239,30 @@ textarea {
     background-color: white;
     width: 45vh;
     height: 10vh;
+}
+
+#usercon {
+    max-width: 10vh;
+    width: auto;
+    height: auto;
+    border: 1vh solid red;
+    border-radius: 4vh;
+    margin: 1vh;
+    background-color: rgb(255, 255, 255, 0.45);
+    margin-left: 15vh;
+}
+
+#userconBig {
+    max-width: 30vh;
+    width: auto;
+    height: auto;
+}
+
+#userDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 @keyframes smallExpand {
@@ -320,5 +367,17 @@ textarea {
     } to {
         transform: translateX(0vh);
         opacity: 1;
+    }
+}
+
+@keyframes bringToCenter {
+    0% {
+        top: 250%;
+    }
+    80% {
+        top: 40%;
+    }
+    100% {
+        top: 50%;
     }
 }

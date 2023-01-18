@@ -1,11 +1,13 @@
-emptyArray();
+summonAddProductForm();
 
+let photoFiles = [];
 let photoInput = document.getElementById("photoInput");
 let photoInputText = document.getElementById("photoInput").getElementsByTagName("h4");
 
 photoInput.addEventListener("dragover", function(event) {
     prevDefault(event);
-    photoInput.style.backgroundColor = "rgba(18, 255, 247, 0.44)";    photoInputText[0].innerHTML = "¡Rápido! ¡Suéltala! 😱";
+    photoInput.style.backgroundColor = "rgba(18, 255, 247, 0.44)";    
+    photoInputText[0].innerHTML = "¡Rápido! ¡Suéltala! 😱";
 })
 
 photoInput.addEventListener("dragleave", function(event) {
@@ -65,4 +67,33 @@ function deleteFile(index, processAgain) {
     if (processAgain) {
         showFiles();
     }
+}
+
+function validateNewProductForm() {
+    if (photoFiles.length() >= 3) {
+
+    }
+    hidePromptMessage();
+    showPromptMessage('tula');
+}
+
+function summonAddProductForm() {
+    let str = 	`<form action='../../index.php'>
+                    <h1 style="font-style: italic;">Añadir producto</h1>
+                    <h4><br>Nombre de producto<br><input type="text" style="margin: 4px;"></input></h3>
+                    <h4>Descripción de producto<br><textarea style="width:350px; height: 55px; margin: 4px;"></textarea></h3>
+                    <div id="photoInput" class="active" style="border: 5px dashed blue; border-radius: 0px; padding: 20px; margin:10px;">
+                        <h4>Arrastra una foto aquí...</h4>
+                        <button onclick="click()" type="button">Upload files</button>
+                        <input type="file" name="inputFiles[]" id="input-file" hidden multiple />
+                    </div>
+                    <div id="fileAgrouppation">
+                    </div>
+                    <div id="buttonForm">
+                        <button>Continuar</button>
+                            <button>Cancelar</button>
+                        </form>
+                    </div>
+                </form>`;
+    showPromptMessage(str);
 }

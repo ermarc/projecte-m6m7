@@ -1,7 +1,6 @@
 let productArray;
-let photoFiles = [];
 
-fetch("./productes.json")
+fetch("./js/productes.json")
     .then(result => result.json())
     .then((fetchedData) => {
         productArray = fetchedData.productes;
@@ -46,70 +45,35 @@ function addChildItemsToOptionSelector(item) {
 }
 */
 
-function showPromptMessage(texto) {
-	let elemento = document.getElementById("backgroundBlur");
-	let elementoTexto = document.getElementById("messagePrompt");
-
-	elemento.style.transform = "scale(1)";
-	elemento.style.animation = "smoothOpacity 0.15s forwards";
-	elementoTexto.style.animation = "fullExpand 0.3s forwards";
-	elementoTexto.style.animationDelay = "0.15s";
-	elementoTexto.innerHTML = texto;
-	setTimeout(function() {
-		elemento.style.opacity = "1";
-		elementoTexto.style.transform = "scale(1)";
-		elemento.style.animation = "";
-		elementoTexto.style.animation = "";
-	}, 450);
-}
-
-function hidePromptMessage() {
-	let elemento = document.getElementById("backgroundBlur");
-	let elementoTexto = document.getElementById("messagePrompt");
-	elementoTexto.onclick = "";
-
-	elementoTexto.style.animation = "fullExpand 0.3s forwards";
-	elementoTexto.style.animationDirection = "reverse";
-	elemento.style.animation = "smoothOpacity 0.15s forwards";
-	elemento.style.animationDirection = "reverse";
-	elemento.style.animationDelay = "0.3s";
-	setTimeout(function() {
-        deleteNewScript();
-		elemento.style.transform = "scale(0)";
-		elementoTexto.style.transform = "scale(0)";
-		elemento.style.animation = "";
-		elementoTexto.style.animation = "";
-	}, 450);
-}
 
 function createRegisterForm() {
-	let str = 	`<form onsubmit="validRegistre()">
+	let str = 	`<form action="./account/register/" onsubmit="return validRegistre()" method="POST">
 					<h1 style="font-style: italic;">Formulario de registro</h1>
-                    <h3><br>Nombre de usuario<br><input type="text" id="usernameInput"></input></h3>
-                    <h3>Email<br><input type="text" id="emailInput"></input></h3>
-                    <h3>Su contraseña<br><input type="password" id="passwordInput"></input></h3>
+                    <h3><br>Nombre de usuario<br><input type="text" id="usernameInput" name="username"></input></h3>
+                    <h3>Email<br><input type="text" id="emailInput" name="mail"></input></h3>
+                    <h3>Su contraseña<br><input type="password" id="passwordInput" name="password" onfocus="retrievePasswordLiveCheckMenu()"></input></h3>
                     <h3>Repita su contraseña<br><input type="password" id="confirmPasswordInput"></input></h3>
                     <div id="buttonForm">
-                        <button>Continuar</button>
+                        <button type="submit">Continuar</button>
                         <button onclick="hidePromptMessage()" type="button">Cancelar</button>
                     </div>
-                </form>`;
+                </form>
+                <div class="passwordAdvisorsDiv"><h4 class="passwordAdvisors unresolvedField">Longitud</h4><h4 class="passwordAdvisors unresolvedField">Minúscula</h4><h4 class="passwordAdvisors unresolvedField">Mayúscula</h4><h4 class="passwordAdvisors unresolvedField">Carácter especial</h4><h4 class="passwordAdvisors unresolvedField">Dígito</h4></div>`;
     showPromptMessage(str);
-    createNewScript("eventListeners.js");
+    createNewScript("./js/eventListeners.js");
 }
 
 function createLoginForm() {
-    let str = 	`<form>
+    let str = 	`<form action="./account/login/" method="POST" >
 					<h1 style="font-style: italic;">Iniciar sesión</h1>
-                    <h3><br>Nombre de usuario<br><input type="text" id="usernameInput"></input></h3>
-                    <h3>Su contraseña<br><input type="password" id="passwordInput"></input></h3>
+                    <h3><br>Nombre de usuario<br><input type="text" id="usernameInput" name="username"></input></h3>
+                    <h3>Su contraseña<br><input type="password" id="passwordInput" name="password"></input></h3>
                     <div id="buttonForm">
-                        <button onclick="validRegistre()">Continuar</button>
+                        <button type="submit">Continuar</button>
                         <button onclick="hidePromptMessage()" type="button">Cancelar</button>
                     </div>
                 </form>`;
     showPromptMessage(str);
-    createNewScript("eventListeners.js");
 }
 
 function createProductPopUp(productArrayIndex) {
@@ -127,7 +91,7 @@ function createProductPopUp(productArrayIndex) {
 }
 
 function summonAddProductForm() {
-    let str = 	`<form width="1200vh">
+    let str = 	`<form>
                     <h1 style="font-style: italic;">Añadir producto</h1>
                     <h4><br>Nombre de producto<br><input type="text" style="margin: 4px;"></input></h3>
                     <h4>Descripción de producto<br><textarea style="width:350px; height: 55px; margin: 4px;"></textarea></h3>
@@ -147,6 +111,28 @@ function summonAddProductForm() {
     createNewScript("productAdd.js");
 }
 
+function createUserForm() {
+    let username = document.getElementById("loggedUser").textContent;
+    let str =   `
+                    <h1 style="font-style: italic;">${username}</h1>
+                    <img id="userconBig" src="./css/usercon.png">
+                    <div id="buttonForm">
+                        <button type="button" onclick="hidePromptMessage()">Regresar a la tienda</button>
+                        <form action="./account/session/sessionDestructor.php">
+                            <button type="submit">Cerrar sesión</button>
+                        </form>
+                        <form action="./account/delete">
+                            <button type="submit">Borrar usuario</button>
+                        </form>
+                        <button type="submit">Borrar usuario</button>
+                    </div>`;
+    showPromptMessage(str);
+}
+
+function actualizarUsuario() {
+    
+}
+
 function createNewScript(scriptSource) {
     var createScript = document.createElement("script");
     createScript.src = scriptSource;
@@ -164,11 +150,8 @@ function deleteNewScript() {
 
 function validRegistre() {
     let suma = (validateUsername() + validateEmail() + validatePassword() + validateConfirmedPassword());
-    if (suma == 4) {
-        console.log("Success!");
-    } else {
-        console.log("Not success!");
-    }
+    if (suma == 4) return true;
+    return false;
 }
 
 function validateUsername() {
@@ -195,22 +178,19 @@ function validateEmail() {
 
 function validatePassword() {
     let password = document.getElementById("passwordInput");
+    let passwordAdvisors = document.getElementsByClassName("passwordAdvisors");
     let passwordVal = password.value;
     let suma = 0;
     let lowerCaseLetters = /[a-z]/g;
     let upperCaseLetters = /[A-Z]/g;
     let digits = /[0-9]/g;
     let specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-    var validLowerCase = false;
-    var validUpperCase = false;
-    var validDigit = false;
-    var validSpecialChar = false;
 
-    if (passwordVal.length >= 8 && passwordVal.length <= 15) suma++;
-    if (lowerCaseLetters.test(passwordVal)) suma++;
-    if (upperCaseLetters.test(passwordVal)) suma++;
-    if (specialChars.test(passwordVal)) suma++;
-    if (digits.test(passwordVal)) suma++;
+    (passwordVal.length >= 8 && passwordVal.length <= 15) ? suma += turnAdvisorResolved(passwordAdvisors[0]) : turnAdvisorUnresolved(passwordAdvisors[0]);
+    (lowerCaseLetters.test(passwordVal)) ? suma += turnAdvisorResolved(passwordAdvisors[1]) : turnAdvisorUnresolved(passwordAdvisors[1]);
+    (upperCaseLetters.test(passwordVal)) ? suma += turnAdvisorResolved(passwordAdvisors[2]) : turnAdvisorUnresolved(passwordAdvisors[2]);
+    (specialChars.test(passwordVal)) ? suma += turnAdvisorResolved(passwordAdvisors[3]) : turnAdvisorUnresolved(passwordAdvisors[3]);
+    (digits.test(passwordVal)) ? suma += turnAdvisorResolved(passwordAdvisors[4]) : turnAdvisorUnresolved(passwordAdvisors[4]);
 
     if (suma == 5) {
         password.style.backgroundColor = "greenyellow";
@@ -219,6 +199,15 @@ function validatePassword() {
         password.style.backgroundColor = "rgb(255, 62, 62)";
         return 0;
     }
+}
+
+function turnAdvisorUnresolved(element) {
+    element.className = "passwordAdvisors unresolvedField";
+}
+
+function turnAdvisorResolved(element) {
+    element.className = "passwordAdvisors resolvedField";
+    return 1;
 }
 
 function validateConfirmedPassword() {
@@ -243,6 +232,12 @@ function doNotUse() {
                     </div>
                 </form>`;
     showPromptMessage(str);
+}
+
+function retrievePasswordLiveCheckMenu() {
+    let element = document.getElementsByClassName("passwordAdvisorsDiv")[0];
+    element.style.animation = "bringToCenter 0.5s forwards ease-in-out";
+
 }
 
 function epilepsyParty() {
