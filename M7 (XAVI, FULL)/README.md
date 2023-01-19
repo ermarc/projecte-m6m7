@@ -1,5 +1,7 @@
 # PROJECTE M6 I M7
-#### PART M7 ####
+## PART M7 ##
+
+### Encontrarás el archivo 'ejecutarprimero.sql', utilízalo para crear la base de datos utilizado en la página automáticamente  ###
 
 - La base de datos se llama SCAMPCSHOP_DB, el usuario y contraseña son "marc" y "1234" respectivamente, tal como está configurada la conexión en los archivos.
 
