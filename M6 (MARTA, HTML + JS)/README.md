@@ -1,1 +1,2 @@
-# projecte-m6m7
+# PROJECTE M6 I M7
+#### PART M6 ####
