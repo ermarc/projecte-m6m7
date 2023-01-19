@@ -1,0 +1,91 @@
+{
+    "productes":
+    [
+    {
+        "id": 0,
+        "name": "NVIDIA GeForce RTX 4090 (SUPRIM X) 24GB",
+        "price": 1899.99,
+        "img": ["https://asset.msi.com/resize/image/global/product/product_16655454640522cb62a2d8fd26c236e55f72b3603d.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
+        "https://asset.msi.com/resize/image/global/product/product_16655454640522cb62a2d8fd26c236e55f72b3603d.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
+        "https://asset.msi.com/resize/image/global/product/product_16655454640522cb62a2d8fd26c236e55f72b3603d.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png"],
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Tarjetas gráficas"
+    },
+    {
+        "id": 1,
+        "name": "Ryzen 7 5800X3D",
+        "price": 379.99,
+        "img": [ "https://www.amd.com/system/files/2022-04/1268900-ryzen-5000-series-pib-1260x709_0.png",
+        "https://rvinformatica.es/2859-large_default/cpu-amd-ryzen-7-5800x-a-3847-ghz.jpg",
+        "https://acf.geeknetic.es/imgw/imagenes/Tutoriales/2020/1922-AMD-Ryzen-7-5800/1922-AMD-Ryzen-7-5800-7.jpg?f=webp"
+        ],
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Procesadores"
+    },
+    {
+        "id": 2,
+        "name": "Crucial P3 Plus 2TB (NVMe 4.0)",
+        "price": 159.99,
+        "img": [ "http://d2r9epyceweg5n.cloudfront.net/stores/002/381/523/products/thumb-111-63ca90b5335d90ac2d16633104341874-640-0.png",
+        "data:image/jpeg;base64,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",
+        "http://d2r9epyceweg5n.cloudfront.net/stores/002/381/523/products/thumb-111-63ca90b5335d90ac2d16633104341874-640-0.png"
+        ],
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Unidades de almacenamiento"
+    },
+    {
+        "id": 3,
+        "name": "ASUS Z490-P STRIX",
+        "price": 279.99,
+        "img": ["https://rog.asus.com/websites/global/products/j2nsws2yijtxo0bt/img/z490/kv/hero.png",
+        "https://rog.asus.com/websites/global/products/j2nsws2yijtxo0bt/img/z490/kv/hero.png",
+        "https://rog.asus.com/websites/global/products/j2nsws2yijtxo0bt/img/z490/kv/hero.png"
+        ],
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Placas base"
+    },
+    {
+        "id": 4,
+        "name": "Pasta térmica ARCTIC MX-4",
+        "price": 8.99,
+        "img": ["https://www.arctic.de/media/a5/fd/66/1583499441/MX4_4g_G00.png",
+        "https://www.arctic.de/media/a5/fd/66/1583499441/MX4_4g_G00.png",
+        "https://www.arctic.de/media/a5/fd/66/1583499441/MX4_4g_G00.png"
+        ],
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Misceláneo"
+    },
+    {
+        "id": 5,
+        "name": "Corsair Vengeance Pro 2x16GB 3600MHz",
+        "price": 158.99,
+        "img": ["https://www.corsair.com/medias/sys_master/images/images/h27/h83/9096216674334/-CMW32GX4M2A2666C16-Gallery-CMW32GX4M2A2666C16-Vengeance-RGB-Pro-01.png",
+        "https://www.corsair.com/medias/sys_master/images/images/h27/h83/9096216674334/-CMW32GX4M2A2666C16-Gallery-CMW32GX4M2A2666C16-Vengeance-RGB-Pro-01.png",
+        "https://www.corsair.com/medias/sys_master/images/images/h27/h83/9096216674334/-CMW32GX4M2A2666C16-Gallery-CMW32GX4M2A2666C16-Vengeance-RGB-Pro-01.png"
+        ],
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Memorias RAM"
+    },
+    {
+        "id": 6,
+        "name": "Videoconsola Xbox Series S",
+        "price": 288.99,
+        "img": ["https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4FkjX?ver=c092",
+        "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4FkjX?ver=c092",
+        "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4FkjX?ver=c092"
+        ],
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Videoconsolas"
+    },{
+        "id": 7,
+        "name": "Smartphone Google Pixel 6 Pro",
+        "price": 644.99,
+        "img": ["https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/main_card_image/https/bdt.computerhoy.com/sites/default/files/pixel_6_pro.png?itok=byahJ3xW",
+        "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/main_card_image/https/bdt.computerhoy.com/sites/default/files/pixel_6_pro.png?itok=byahJ3xW",
+        "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/main_card_image/https/bdt.computerhoy.com/sites/default/files/pixel_6_pro.png?itok=byahJ3xW"
+        ],
+        "description": "Descripció genèrica d'exemple.",
+        "category": "Smartphones"
+    }
+    ]
+}

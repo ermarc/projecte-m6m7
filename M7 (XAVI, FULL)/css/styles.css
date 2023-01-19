@@ -1,0 +1,383 @@
+* {
+    margin: 0;
+    top: 0;
+    left: 0;
+    font-family: 4vh;
+    font-family: 'Exo+2';
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    padding-top: 0.5vh;
+    padding-bottom: 0.33vh;
+    background-image: linear-gradient(to left, lightgreen, green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+header img {
+    width: 70vh;
+    height: 7vh;
+}
+
+.accountButton {
+    width: 26vh;
+    height: 10vh;
+    background-color: greenyellow;
+    box-shadow: 0.51vh 0.51vh 0vh 0vh lightgreen;
+    font-size: 4vh;
+    margin: 2vh;
+}
+
+body {
+    background-image: url("https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+
+#welcomeTitle {
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    font-family: "Exo 2";
+    font-style: bold;
+    font-size: 5vh;
+    clear: both;
+}
+
+#listedFeaturedProducts {
+    width: 100%;
+    margin-top: 3vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.featuredProduct {
+    text-align: center;
+    width: 50vh;
+    height: 45vh;
+    font-size: 1.5vh;
+    border: 2vh solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, lightgreen, green);;
+    background-image: linear-gradient(to left, lightgreen, green);
+    padding: 1vh;
+    margin: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.featuredProduct:hover {
+    animation: smallExpand 0.3s forwards;
+}
+
+.featuredProduct h1 {
+    max-width: 50vh;
+    max-height: 10vh;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-wrap: nowrap;
+}
+
+.featuredProduct img, form img {
+    max-width: 45vh;
+    max-height: 30vh;
+    width: auto;
+    height: auto;
+}
+
+#divSelectProducts {
+    margin-top: 3vh;
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    margin-top: 10vh;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    background-color: rgb(100, 100, 100);
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    bottom: 0;
+    font-size: 2vh;
+    text-align: center;
+}
+
+#backgroundBlur {
+    position: fixed;
+    text-align: center;
+    backdrop-filter: blur(1.5vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+#messagePrompt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    font-size: 3vh;
+    font-style: italic;
+    color: white;
+    background-color: rgb(0, 121, 10);
+    box-shadow: 0.4vh 0.4vh 0vh 0vh rgb(0, 62, 5);
+    padding: 2vh;
+    max-width: 50vh;
+}
+
+#messagePrompt input {
+    width: 30vh;
+    height: 3vh;
+    border-radius: 0.8vh;
+    margin: 1vh;
+}
+
+textarea {
+    border-radius: 3vh;
+    resize: none;
+}
+
+#productPopupTitle {
+    width: 40vh;
+}
+
+#buttonForm button {
+    margin: 1.5vh;
+    width: 20vh;
+    height: 10vh;
+    background-color: greenyellow;
+    box-shadow: 0.5vh 0.5vh 0vh 0vh lightgreen;
+    font-size: 3vh;
+}
+
+.unresolvedField {
+    color: red;
+}
+
+.resolvedField {
+    color: green;
+}
+
+.passwordAdvisorsDiv {
+    width: 40vh;
+    height: 25vh;
+    border-radius: 2vh;
+    background-color: lightgreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    z-index: -5;
+    left: 105%;
+    top: 250%;
+}
+
+#fileAgrouppation {
+    width: 100%;
+    max-height: 20vh;
+    overflow-y: scroll;
+}
+
+.newProductImage {
+    background-Color: lightgreen;
+    border: 1vh solid darkgreen;
+    border-radius: 8vh;
+    height: 7vh;
+    padding: 2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1vh;
+    font-size: 2vh;
+}
+
+.newProductImage img {
+    max-width: 15vh;
+    height: auto;
+}
+
+.newProductImage span {
+    margin: 0.5vh;
+}
+.removeButton {
+    margin-left: 1vh;
+    background-color: red;
+    border-radius: 1vh;
+    padding: 2vh;
+    color: white;
+}
+
+#productSelectorDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.normalSelector {
+    margin-top: 3vh;
+    border: 0.5vh solid black;
+    border-radius: 4vh;
+    background-color: white;
+    width: 45vh;
+    height: 10vh;
+}
+
+#usercon {
+    max-width: 10vh;
+    width: auto;
+    height: auto;
+    border: 1vh solid red;
+    border-radius: 4vh;
+    margin: 1vh;
+    background-color: rgb(255, 255, 255, 0.45);
+    margin-left: 15vh;
+}
+
+#userconBig {
+    max-width: 30vh;
+    width: auto;
+    height: auto;
+}
+
+#userDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+@keyframes smallExpand {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(0.85);
+    }
+    80% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes smoothOpacity {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@keyframes fullExpand {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes textColor {
+    0% {
+    }
+    6.66666% {
+        background-color: red;
+    }
+
+    13.3333% {
+        background-color: blue;
+    }
+    20% {
+        background-color: yellow;
+    }
+    26.6666% {
+        background-color: green;
+    }
+    33.3333% {
+        background-color: fuchsia;
+    }
+    40% {
+        background-color: red
+    }
+    46.66666% {
+        background-color: blue
+    }
+    53.3333% {
+        background-color: yellow
+    }
+    60% {
+        background-color: green;
+    }
+    66.6666% {
+        background-color: fuchsia;
+    }
+    73.3333% {
+        background-color: red
+    }
+    86.6666% {
+        background-color: blue
+    }
+    93.3333% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: green;
+    }
+}
+
+@keyframes multiInvert {
+    0% {
+        filter: invert(0);
+    } 
+    50% {
+        filter: invert(1);
+    }
+    100% {
+        filter: invert(0);
+    }
+}
+
+@keyframes sideApparition {
+    from {
+        transform: translateX(-5vh);
+        opacity: 0;
+    } to {
+        transform: translateX(0vh);
+        opacity: 1;
+    }
+}
+
+@keyframes bringToCenter {
+    0% {
+        top: 250%;
+    }
+    80% {
+        top: 40%;
+    }
+    100% {
+        top: 50%;
+    }
+}
