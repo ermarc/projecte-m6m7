@@ -78,10 +78,10 @@ function validateNewProductForm() {
 }
 
 function summonAddProductForm() {
-    let str = 	`<form action='../../index.php'>
+    let str = 	`<form action='./productAdd.php' method="POST">
                     <h1 style="font-style: italic;">Añadir producto</h1>
-                    <h4><br>Nombre de producto<br><input type="text" style="margin: 4px;"></input></h3>
-                    <h4>Descripción de producto<br><textarea style="width:350px; height: 55px; margin: 4px;"></textarea></h3>
+                    <h4><br>Nombre de producto<br><input type="text" style="margin: 4px;" name="productName"></input></h3>
+                    <h4>Descripción de producto<br><textarea name="productDesc" style="width:350px; height: 55px; margin: 4px;"></textarea></h3>
                     <div id="photoInput" class="active" style="border: 5px dashed blue; border-radius: 0px; padding: 20px; margin:10px;">
                         <h4>Arrastra una foto aquí...</h4>
                         <button onclick="click()" type="button">Upload files</button>

@@ -124,13 +124,29 @@ function createUserForm() {
                         <form action="./account/delete">
                             <button type="submit">Borrar usuario</button>
                         </form>
-                        <button type="submit">Borrar usuario</button>
+                        <button onclick="actualizarUsuario()">Actualizar información</button>
                     </div>`;
     showPromptMessage(str);
 }
 
 function actualizarUsuario() {
-    
+    hidePromptMessage();
+    setTimeout(function() {
+        let str = 	`<form action="./account/update/" onsubmit="return validRegistre()" method="POST">
+        <h1 style="font-style: italic;">Actualizar usuario</h1>
+        <h3><br>Nombre de usuario<br><input type="text" id="usernameInput" name="username"></input></h3>
+        <h3>Email<br><input type="text" id="emailInput" name="mail"></input></h3>
+        <h3>Su contraseña<br><input type="password" id="passwordInput" name="password" onfocus="retrievePasswordLiveCheckMenu()"></input></h3>
+        <h3>Repita su contraseña<br><input type="password" id="confirmPasswordInput"></input></h3>
+        <div id="buttonForm">
+            <button type="submit">Continuar</button>
+            <button onclick="hidePromptMessage()" type="button">Cancelar</button>
+        </div>
+    </form>
+    <div class="passwordAdvisorsDiv"><h4 class="passwordAdvisors unresolvedField">Longitud</h4><h4 class="passwordAdvisors unresolvedField">Minúscula</h4><h4 class="passwordAdvisors unresolvedField">Mayúscula</h4><h4 class="passwordAdvisors unresolvedField">Carácter especial</h4><h4 class="passwordAdvisors unresolvedField">Dígito</h4></div>`;
+    showPromptMessage(str);
+    createNewScript("./js/eventListeners.js");
+    }, 1500);
 }
 
 function createNewScript(scriptSource) {
