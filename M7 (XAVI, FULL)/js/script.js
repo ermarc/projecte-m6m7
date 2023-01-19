@@ -25,7 +25,7 @@ function addChildItemsToProduct(item, productParentDiv, productArrayIndex) {
     var productPrice = document.createElement("h2");
 
     productParentDiv.onclick = function() { createProductPopUp(productArrayIndex); };
-    productImage.src = item.img;
+    productImage.src = item.img[0];
     productTitle.textContent = item.name;
     productPrice.textContent = `${item.price}€`;
     
@@ -77,10 +77,20 @@ function createLoginForm() {
 }
 
 function createProductPopUp(productArrayIndex) {
+    let imageDivStr = "";
+    for (let i = 0; i < productArray[productArrayIndex].img.length; i++) {
+        imageDivStr += `<div class="mySlides fade">
+                            <img src="${productArray[productArrayIndex].img[i]}" style="width:100%">
+                        </div>`;
+    }
     let str = 	`<form>
 					<h2 id="productPopupTitle" style="font-style: italic;">${productArray[productArrayIndex].name}</h2>
                     <h4>${productArray[productArrayIndex].category}</h4>
-                    <img src=${productArray[productArrayIndex].img}></img>
+                    <div class="contenedor-img">
+                        ${imageDivStr}
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     <h5>${productArray[productArrayIndex].description}</h5>
 
                     <div id="buttonForm">
@@ -88,7 +98,34 @@ function createProductPopUp(productArrayIndex) {
                     </div>
                 </form>`;
     showPromptMessage(str);
+    plusSlides(1);
 }
+
+let slideIndex = 0;
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+} 
 
 function summonAddProductForm() {
     let str = 	`<form>

@@ -23,11 +23,6 @@
 
     <div id="listedFeaturedProducts"></div>
 
-    <div id="productSelectorDiv">
-        <selector class="normalSelector" id="superCategorySelector"></selector>
-        <selector class="normalSelector" id="categorySelector"></selector>
-    </div>
-
     <audio id="epilepsyAudio">
         <source src="dope.mp3" type="audio/mpeg">
     </audio>
